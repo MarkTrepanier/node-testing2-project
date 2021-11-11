@@ -1,4 +1,3 @@
-// DO NOT CHANGE THIS FILE
 const items = [
   { item_name: "box" },
   { item_name: "quilt" },
