@@ -20,4 +20,16 @@ server.get("/api/items", (req, res) => {
     });
 });
 
+server.get("/api/items/:item_id", (req, res) => {
+  Item.getById(req.params.item_id).then((resp) => {
+    res.status(200).json(resp);
+  });
+});
+
+server.post("/api/items", (req, res) => {
+  Item.postItem(req.body).then((resp) => {
+    res.status(201).json(resp);
+  });
+});
+
 module.exports = server;
