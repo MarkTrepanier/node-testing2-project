@@ -33,4 +33,19 @@ describe("item Model", () => {
       expect(data).toMatchObject(items);
     });
   });
+
+  describe("getById()", () => {
+    test("returns the correct item", async () => {
+      const data = await Item.getById("1");
+      expect(data).toMatchObject({ item_id: 1, item_name: "box" });
+    });
+  });
+
+  describe("postItem(", () => {
+    test("returns inserted item", async () => {
+      const newItem = { item_name: "glue" };
+      const data = await Item.postItem(newItem);
+      expect(data).toMatchObject(newItem);
+    });
+  });
 });
